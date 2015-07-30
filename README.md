@@ -2,7 +2,8 @@ VAGRANT:
 ________
 
 Install Vagrant for your OS from:
-http://www.vagrantup.com/downloads
+
+    http://www.vagrantup.com/downloads
 
     $ vagrant init ubuntu/trusty64
 
@@ -60,3 +61,14 @@ ____
     vagrant@vagrant-ubuntu-trusty-64:~$ $VENV/bin/pserve development.ini --reload
 
 open localhost:6543 from your web browser
+
+PYRAMID DEBUG TOOLBAR:
+______________________
+
+add line:
+
+    debugtoolbar.hosts = 192.168.1.1 0.0.0.0/0
+
+to development.ini file to allow access to debug toolbar to all IP addresses (in our case due to forwarded port in vagrant). More info at:
+
+    http://docs.pylonsproject.org/projects/pyramid-debugtoolbar/en/latest/index.html#overview
